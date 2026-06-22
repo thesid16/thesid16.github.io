@@ -1,0 +1,52 @@
+---
+import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import { site } from '../data/site';
+
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#research', label: 'Research' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#cv', label: 'CV' },
+];
+---
+
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<header class="nav" id="site-nav">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__brand" aria-label={`${site.name} — home`}>
+      <Icon name="cpu" class="chip-logo" />
+      <span>{site.name}</span>
+    </a>
+
+    <nav aria-label="Primary" class="nav__nav">
+      <ul class="nav__links" id="nav-links">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} data-navlink>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="nav__actions">
+      <ThemeToggle />
+      <button
+        class="nav__toggle needs-js"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-label="Open menu"
+      >
+        <Icon name="menu" size="1.2rem" />
+      </button>
+    </div>
+  </div>
+</header>

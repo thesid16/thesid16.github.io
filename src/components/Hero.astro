@@ -1,0 +1,47 @@
+---
+import Icon from './Icon.astro';
+import ProfileLinks from './ProfileLinks.astro';
+import { site } from '../data/site';
+---
+
+<section class="hero container" id="top">
+  <p class="hero__greeting reveal">
+    <span class="wave" aria-hidden="true">👋</span> Hi, I'm
+  </p>
+
+  <h1 class="hero__name reveal">{site.name}<span class="dot">.</span></h1>
+
+  <p class="hero__tagline reveal">{site.tagline}</p>
+
+  <div class="now-pill reveal" id="now-pill">
+    <span class="now-pill__dot" aria-hidden="true"></span>
+    <span>
+      <b>Currently</b>
+      <span class="rotator" id="hero-rotator" data-rotate={JSON.stringify(site.heroRotators)}
+        >{site.nowLine}</span
+      ><span class="rotator__caret needs-js" aria-hidden="true"></span>
+    </span>
+  </div>
+
+  <div class="hero__meta reveal">
+    <span>
+      <Icon name="cpu" size="1rem" />
+      {site.affiliationShort} · {site.graduation}
+    </span>
+    <span>📍 {site.location}</span>
+  </div>
+
+  <div class="btn-row reveal" style="margin-bottom: var(--space-6)">
+    <a class="btn btn--primary" href={site.cvPath} download>
+      <Icon name="download" size="1.05rem" /> Download CV
+    </a>
+    <button class="btn btn--accent needs-js" type="button" data-copy={site.email} data-copy-label="Email copied!">
+      <Icon name="email" size="1.05rem" /> Copy email
+    </button>
+    <a class="btn btn--ghost" href="#publications">
+      <Icon name="braces" size="1.05rem" /> See publications
+    </a>
+  </div>
+
+  <ProfileLinks class="reveal" />
+</section>

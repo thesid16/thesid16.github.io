@@ -1,0 +1,136 @@
+---
+import Icon from './Icon.astro';
+import {
+  publications,
+  pubStats,
+  pubLink,
+  toBibTeX,
+  STATUS_META,
+  type Publication,
+} from '../data/publications';
+
+const journals = publications.filter((p) => p.type === 'journal');
+const conferences = publications.filter((p) => p.type === 'conference');
+
+const filters = [
+  { value: 'all', label: 'All' },
+  { value: 'journal', label: 'Journal' },
+  { value: 'conference', label: 'Conference' },
+  { value: 'published', label: 'Published' },
+  { value: 'under-review', label: 'Under review' },
+];
+
+const groups: { key: string; title: string; items: Publication[] }[] = [
+  { key: 'journal', title: 'Journal Articles', items: journals },
+  { key: 'conference', title: 'Conference Papers', items: conferences },
+];
+---
+
+<section id="publications" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="03">Publications</p>
+    <h2 class="section-title reveal">Selected work</h2>
+    <p class="pub-substat reveal">
+      {pubStats.total} papers · {pubStats.firstAuthor} as first author
+    </p>
+
+    <div class="filters needs-js" role="group" aria-label="Filter publications">
+      {
+        filters.map((f, i) => (
+          <button
+            class="filter"
+            type="button"
+            data-filter={f.value}
+            aria-pressed={i === 0 ? 'true' : 'false'}
+          >
+            {f.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <p class="pub-empty needs-js" id="pub-empty" hidden>No papers match that filter.</p>
+
+    {
+      groups.map((group) => (
+        <div class="pub-group" data-group={group.key}>
+          <h3 class="pub-group__title">{group.title}</h3>
+          <ul class="pub-list">
+            {group.items.map((pub) => {
+              const href = pubLink(pub);
+              const status = STATUS_META[pub.status];
+              return (
+                <li class="pub reveal" data-type={pub.type} data-status={pub.status}>
+                  <div class="pub__year">{pub.year}</div>
+                  <div class="pub__body">
+                    <p class="pub__title">
+                      {href ? (
+                        <a href={href} target="_blank" rel="noopener">
+                          {pub.title}
+                        </a>
+                      ) : (
+                        pub.title
+                      )}
+                    </p>
+                    <p class="pub__authors">
+                      {pub.authors.map((a, i) => (
+                        <>
+                          {i > 0 ? ', ' : ''}
+                          {a.me ? <span class="me">{a.name}</span> : a.name}
+                        </>
+                      ))}
+                    </p>
+                    <p class="pub__authors">
+                      <span class="pub__venue">{pub.venue}</span>
+                    </p>
+                    <div class="pub__meta">
+                      <span class={`badge badge--${pub.status}`}>{status.label}</span>
+                      {pub.doi && (
+                        <a
+                          class="pub__link"
+                          href={`https://doi.org/${pub.doi}`}
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          <Icon name="external" /> DOI
+                        </a>
+                      )}
+                      {pub.url && (
+                        <a class="pub__link" href={pub.url} target="_blank" rel="noopener">
+                          <Icon name="external" /> Paper
+                        </a>
+                      )}
+                      <button
+                        class="cite-btn needs-js"
+                        type="button"
+                        data-bibtex={toBibTeX(pub)}
+                        data-cite-title={pub.title}
+                      >
+                        <Icon name="braces" /> Cite
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<dialog class="cite-dialog" id="cite-dialog" aria-label="BibTeX citation">
+  <div class="cite-dialog__head">
+    <h3>BibTeX</h3>
+    <button class="icon-btn" type="button" id="cite-close" aria-label="Close">
+      <Icon name="close" size="1rem" />
+    </button>
+  </div>
+  <pre id="cite-pre"></pre>
+  <div class="cite-dialog__foot">
+    <button class="btn btn--primary" type="button" id="cite-copy">
+      <Icon name="copy" size="1rem" /> Copy BibTeX
+    </button>
+  </div>
+</dialog>

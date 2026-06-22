@@ -1,0 +1,21 @@
+---
+import ProfileLinks from './ProfileLinks.astro';
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+const updated = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<footer class="footer" id="contact">
+  <div class="container footer__grid">
+    <div class="footer__meta">
+      <p>© {year} {site.name}. Built with Astro.</p>
+      <p class="updated">Last updated {updated}</p>
+    </div>
+    <ProfileLinks />
+  </div>
+</footer>

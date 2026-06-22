@@ -1,0 +1,13 @@
+---
+import { researchInterests } from '../data/site';
+---
+
+<section id="research" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="02">Research interests</p>
+    <h2 class="section-title reveal">What I think about</h2>
+    <ul class="chips reveal">
+      {researchInterests.map((topic) => <li class="chip">{topic}</li>)}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+---
+import { site, profileLinks, researchInterests } from '../data/site';
+import { publications, pubLink } from '../data/publications';
+
+const sameAs = profileLinks
+  .filter((l) => l.href.startsWith('http'))
+  .map((l) => l.href);
+
+const person = {
+  '@type': 'Person',
+  '@id': `${site.url}/#person`,
+  name: site.name,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  jobTitle: site.role,
+  image: `${site.url}/og.png`,
+  affiliation: {
+    '@type': 'CollegeOrUniversity',
+    name: site.affiliationShort,
+    url: site.affiliationUrl,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.location,
+  },
+  knowsAbout: researchInterests,
+  sameAs,
+};
+
+const articles = publications.map((pub) => {
+  const href = pubLink(pub);
+  const entry: Record<string, unknown> = {
+    '@type': 'ScholarlyArticle',
+    headline: pub.title.replace(/\.$/, ''),
+    name: pub.title.replace(/\.$/, ''),
+    author: pub.authors.map((a) => ({ '@type': 'Person', name: a.name })),
+    datePublished: String(pub.year),
+    isPartOf: { '@type': 'Periodical', name: pub.venue },
+    creativeWorkStatus: pub.status,
+    inLanguage: 'en',
+    publisher:
+      pub.authors.find((a) => a.me) !== undefined
+        ? { '@id': `${site.url}/#person` }
+        : undefined,
+  };
+  if (href) entry.url = href;
+  if (pub.doi) {
+    entry.identifier = { '@type': 'PropertyValue', propertyID: 'DOI', value: pub.doi };
+    entry.sameAs = `https://doi.org/${pub.doi}`;
+  }
+  return entry;
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    person,
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      url: site.url,
+      name: `${site.name} — ${site.role}`,
+      description: site.description,
+      inLanguage: 'en',
+      author: { '@id': `${site.url}/#person` },
+    },
+    ...articles,
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

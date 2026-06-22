@@ -1,0 +1,13 @@
+---
+import { about } from '../data/site';
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="01">About</p>
+    <h2 class="section-title reveal">Hardware &amp; AI, in both directions</h2>
+    <div class="about prose">
+      {about.map((para) => <p class="reveal" set:html={para} />)}
+    </div>
+  </div>
+</section>

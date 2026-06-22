@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.astro';
+import { projects } from '../data/projects';
+import { profileLinks } from '../data/site';
+
+const github = profileLinks.find((l) => l.icon === 'github');
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="04">Projects</p>
+    <h2 class="section-title reveal">Things I've built</h2>
+
+    <div class="project-grid">
+      {
+        projects.map((project) => (
+          <article class:list={['project', 'reveal', { 'project--featured': project.featured }]}>
+            <div class="project__head">
+              <h3 class="project__title">{project.title}</h3>
+              {project.badge && <span class="project__badge">{project.badge}</span>}
+            </div>
+
+            <p class="project__desc">{project.description}</p>
+
+            {project.metrics && <p class="project__metrics">{project.metrics}</p>}
+
+            {project.links && project.links.length > 0 && (
+              <div class="project__links">
+                {project.links.map((link) =>
+                  link.href ? (
+                    <a href={link.href} target="_blank" rel="noopener">
+                      <Icon name="external" /> {link.label}
+                    </a>
+                  ) : (
+                    <span class="soon">
+                      <Icon name="link" /> {link.label}
+                    </span>
+                  )
+                )}
+              </div>
+            )}
+
+            <ul class="project__tags">
+              {project.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    {
+      github && (
+        <p class="reveal" style="margin-top: var(--space-5); color: var(--text-muted); font-size: var(--fs-small)">
+          More experiments and code live on{' '}
+          <a
+            href={github.href}
+            target="_blank"
+            rel="noopener"
+            style="color: var(--primary); font-weight: 600"
+          >
+            GitHub ({github.handle})
+          </a>
+          .
+        </p>
+      )
+    }
+  </div>
+</section>

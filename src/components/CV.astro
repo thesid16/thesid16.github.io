@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+
+<section id="cv" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="05">CV</p>
+    <h2 class="section-title reveal">Curriculum vitae</h2>
+
+    <div class="cv-wrap">
+      <div class="btn-row reveal">
+        <a class="btn btn--primary" href={site.cvPath} download>
+          <Icon name="download" size="1.05rem" /> Download CV (PDF)
+        </a>
+        <a class="btn btn--ghost" href={site.cvPath} target="_blank" rel="noopener">
+          <Icon name="external" size="1.05rem" /> Open in new tab
+        </a>
+      </div>
+
+      <div class="cv-frame reveal">
+        <object data={site.cvPath} type="application/pdf" aria-label={`${site.name} — Curriculum Vitae`}>
+          <div class="cv-fallback">
+            <p>
+              Can't show the embedded PDF here.<br />
+              <a href={site.cvPath} download style="color: var(--primary); font-weight: 600">
+                Download the CV instead →
+              </a>
+            </p>
+          </div>
+        </object>
+      </div>
+    </div>
+  </div>
+</section>
