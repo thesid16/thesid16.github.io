@@ -100,6 +100,41 @@ export const about: string[] = [
   `If any of this overlaps with your group's work, I'd love to talk — my inbox is always open.`,
 ];
 
+/** Honors & recognition. Add or edit entries freely — order is preserved. */
+export type Honor = {
+  title: string;
+  org: string;
+  detail: string;
+};
+
+export const honors: Honor[] = [
+  {
+    title: 'Student of the Year',
+    org: 'Shiv Nadar Institution of Eminence',
+    detail: 'University-wide recipient, Class of 2027.',
+  },
+  {
+    title: "Dean's List",
+    org: 'School of Engineering',
+    detail: 'For academic standing — Fall 2023, Spring 2024, and Fall 2025.',
+  },
+  {
+    title: 'Top 10% of cohort',
+    org: 'CGPA 8.73 / 10',
+    detail: 'Consistent academic standing in Electrical & Computer Engineering.',
+  },
+];
+
+/** Photo + caption shown alongside the honors list. Drop the image in /public. */
+export const recognition = {
+  image: '/award.jpg',
+  width: 1600,
+  height: 1066,
+  alt: "Siddharth Patel receiving the Dean's List award on stage from Dr. Suneet Tuli, Dean of Engineering",
+  caption:
+    "Receiving the Dean's List award from Dr. Suneet Tuli, Dean of Engineering.",
+} as const;
+
 /** Research interest chips. */
 export const researchInterests: string[] = [
   'Computer architecture & AI hardware accelerators',

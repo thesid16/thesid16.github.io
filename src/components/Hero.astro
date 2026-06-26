@@ -5,6 +5,8 @@ import { site } from '../data/site';
 ---
 
 <section class="hero container" id="top">
+  <div class="hero__grid">
+  <div class="hero__content">
   <p class="hero__greeting reveal">
     <span class="wave" aria-hidden="true">👋</span> Hi, I'm
   </p>
@@ -44,4 +46,17 @@ import { site } from '../data/site';
   </div>
 
   <ProfileLinks class="reveal" />
+  </div>
+
+  <figure class="hero__portrait reveal">
+    <img
+      src="/profile.jpg"
+      width="826"
+      height="1100"
+      alt={`Portrait of ${site.name}`}
+      fetchpriority="high"
+      decoding="async"
+    />
+  </figure>
+  </div>
 </section>

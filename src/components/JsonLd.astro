@@ -1,5 +1,5 @@
 ---
-import { site, profileLinks, researchInterests } from '../data/site';
+import { site, profileLinks, researchInterests, honors } from '../data/site';
 import { publications, pubLink } from '../data/publications';
 
 const sameAs = profileLinks
@@ -24,6 +24,7 @@ const person = {
     addressLocality: site.location,
   },
   knowsAbout: researchInterests,
+  award: honors.map((h) => `${h.title} — ${h.org}`),
   sameAs,
 };
 

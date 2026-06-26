@@ -1,0 +1,36 @@
+---
+import { honors, recognition } from '../data/site';
+---
+
+<section id="honors" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="05">Honors</p>
+    <h2 class="section-title reveal">Recognition</h2>
+
+    <div class="honors reveal">
+      <figure class="honors__figure">
+        <img
+          src={recognition.image}
+          width={recognition.width}
+          height={recognition.height}
+          alt={recognition.alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>{recognition.caption}</figcaption>
+      </figure>
+
+      <ul class="honor-list">
+        {
+          honors.map((h) => (
+            <li class="honor">
+              <h3>{h.title}</h3>
+              <p class="honor__org">{h.org}</p>
+              <p class="honor__detail">{h.detail}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
