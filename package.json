@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "gen:assets": "node scripts/gen-assets.mjs"
+    "gen:assets": "node scripts/gen-assets.mjs",
+    "gen:cv": "swift scripts/render-cv.swift public/cv.pdf public/cv"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",

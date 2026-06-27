@@ -1,6 +1,12 @@
 ---
 import Icon from './Icon.astro';
 import { site } from '../data/site';
+
+// The CV is shown as page images. Mobile browsers refuse to render inline PDFs
+// (<object>/<embed>), so images are the only display that works everywhere; the
+// buttons above still serve the real PDF. Regenerate the images after updating
+// public/cv.pdf with: npm run gen:cv
+const cvPages = [1, 2, 3];
 ---
 
 <section id="cv" class="section">
@@ -18,17 +24,20 @@ import { site } from '../data/site';
         </a>
       </div>
 
-      <div class="cv-frame reveal">
-        <object data={site.cvPath} type="application/pdf" aria-label={`${site.name} — Curriculum Vitae`}>
-          <div class="cv-fallback">
-            <p>
-              Can't show the embedded PDF here.<br />
-              <a href={site.cvPath} download style="color: var(--primary); font-weight: 600">
-                Download the CV instead →
-              </a>
-            </p>
-          </div>
-        </object>
+      <div class="cv-frame reveal" tabindex="0" role="group" aria-label={`${site.name} — Curriculum Vitae, ${cvPages.length} pages`}>
+        {
+          cvPages.map((n) => (
+            <img
+              class="cv-page"
+              src={`/cv-${n}.jpg`}
+              width="1190"
+              height="1683"
+              alt={`${site.name} — CV, page ${n} of ${cvPages.length}`}
+              loading="lazy"
+              decoding="async"
+            />
+          ))
+        }
       </div>
     </div>
   </div>
