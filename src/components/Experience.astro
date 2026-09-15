@@ -1,0 +1,52 @@
+---
+import Icon from './Icon.astro';
+import { experience, certificate } from '../data/site';
+---
+
+<section id="experience" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="05">Experience</p>
+    <h2 class="section-title reveal">Industry experience</h2>
+
+    <div class="experience reveal">
+      <figure class="experience__cert">
+        <a href={certificate.pdfPath} target="_blank" rel="noopener" aria-label="Open internship certificate as PDF">
+          <img
+            src={certificate.image}
+            width={certificate.width}
+            height={certificate.height}
+            alt={certificate.alt}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <figcaption>{certificate.caption}</figcaption>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href={certificate.pdfPath} download>
+            <Icon name="download" size="1.05rem" /> Download certificate
+          </a>
+          <a class="btn btn--ghost" href={certificate.pdfPath} target="_blank" rel="noopener">
+            <Icon name="external" size="1.05rem" /> Open in new tab
+          </a>
+        </div>
+      </figure>
+
+      <ul class="experience-list">
+        {
+          experience.map((e) => (
+            <li class="exp-entry">
+              <div class="exp-entry__head">
+                <h3>{e.role}</h3>
+                <span class="exp-entry__dates">{e.start} – {e.end}</span>
+              </div>
+              <p class="exp-entry__org">{e.org} · {e.location}</p>
+              <ul class="exp-entry__bullets">
+                {e.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

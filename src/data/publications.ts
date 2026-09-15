@@ -46,7 +46,7 @@ export const publications: Publication[] = [
     year: 2026,
     type: 'journal',
     status: 'under-review',
-    // url: 'https://arxiv.org/abs/TODO',
+    url: 'https://arxiv.org/abs/2608.28048',
   },
   {
     id: 'patel2026bitwise',
@@ -102,18 +102,23 @@ export const publications: Publication[] = [
     venue: 'Proc. ICITSIF',
     year: 2026,
     type: 'conference',
-    status: 'in-press',
+    status: 'published',
+    doi: '10.1109/ICITSIF69060.2026.11608698',
   },
   {
-    id: 'patel2026archaware',
-    authors: [{ name: 'S. Patel', me: true }, { name: 'R. Singh' }],
+    id: 'patel2027interface',
+    authors: [
+      { name: 'S. Patel', me: true },
+      { name: 'V. Singh' },
+      { name: 'S. Malu' },
+      { name: 'R. Singh' },
+    ],
     title:
-      'Architecture-Aware Pruning and Quantisation for CPU-Only IoT Edge Inference.',
-    venue: 'Proc. IEEE World Forum on the Internet of Things (WF-IoT)',
-    year: 2026,
+      'Learn the Interface, Not the Implementation: Output Representation Dominates Training Regime in LLM-Based RTL Generation.',
+    venue: 'Proc. 40th IEEE International Conference on VLSI Design (VLSID)',
+    year: 2027,
     type: 'conference',
     status: 'under-review',
-    // url: 'https://arxiv.org/abs/TODO',
   },
 ];
 

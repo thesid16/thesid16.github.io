@@ -91,9 +91,9 @@ export const about: string[] = [
    working at the intersection of <strong>hardware and AI — in both directions</strong>.
    On the <em>hardware-for-AI</em> side, my research spans AI accelerators, compute-in-memory,
    and making large-model inference efficient, adaptive, and deterministic. On the
-   <em>AI-for-hardware</em> side, I work at <strong>STMicroelectronics</strong> building
-   AI-driven automation for memory design — LLM-assisted RTL generation, fine-tuned domain
-   models, and an agent that drives the design flow.`,
+   <em>AI-for-hardware</em> side, I recently completed a Technology R&amp;D internship at
+   <strong>STMicroelectronics</strong>, building AI-driven automation for memory design —
+   LLM-assisted RTL generation, fine-tuned domain models, and an agent that drove the design flow.`,
   `Right now I'm designing an <strong>open-source GPU microarchitecture</strong> from first
    principles as my undergraduate thesis. I'm applying to graduate programs to go deeper on
    the architecture and systems that will run the next generation of AI.`,
@@ -116,11 +116,11 @@ export const honors: Honor[] = [
   {
     title: "Dean's List",
     org: 'School of Engineering',
-    detail: 'For academic standing — Fall 2023, Spring 2024, and Fall 2025.',
+    detail: 'For academic standing — Fall 2023, Spring 2024, Fall 2025, and Spring 2026.',
   },
   {
     title: 'Top 10% of cohort',
-    org: 'CGPA 8.73 / 10',
+    org: 'CGPA 8.75 / 10',
     detail: 'Consistent academic standing in Electrical & Computer Engineering.',
   },
 ];
@@ -133,6 +133,42 @@ export const recognition = {
   alt: "Siddharth Patel receiving the Dean's List award on stage from Dr. Suneet Tuli, Dean of Engineering",
   caption:
     "Receiving the Dean's List award from Dr. Suneet Tuli, Dean of Engineering.",
+} as const;
+
+/** Industry experience. Add or edit entries freely — order is preserved. */
+export type ExperienceEntry = {
+  role: string;
+  org: string;
+  location: string;
+  start: string;
+  end: string;
+  bullets: string[];
+};
+
+export const experience: ExperienceEntry[] = [
+  {
+    role: 'Technology R&D (TRD) Intern',
+    org: 'STMicroelectronics',
+    location: 'Greater Noida, India',
+    start: 'Jun 2026',
+    end: 'Aug 2026',
+    bullets: [
+      'Built AI-driven automation for STMicroelectronics’ end-to-end memory-design workflow, replacing a manual, multi-engineer, per-variant RTL process with an intelligent generation pipeline.',
+      'Applied ML-guided design-space exploration and learned optimization, and fine-tuned LLMs for domain-specific accuracy on RTL tasks.',
+      'Developed LLM-assisted RTL generation and architected a domain-specific AI agent from scratch to drive the flow end-to-end.',
+      'Produced synthesis-ready, ECC-protected memory subsystems (encoder/decoder RTL; SEC/SECDED) across 7+ configuration axes, byte- to gigabyte-scale.',
+    ],
+  },
+];
+
+/** Internship completion certificate, shown alongside the Experience entry. */
+export const certificate = {
+  pdfPath: '/st-certificate.pdf',
+  image: '/st-certificate-1.jpg',
+  width: 1224,
+  height: 1584,
+  alt: "STMicroelectronics internship completion certificate for Siddharth Patel",
+  caption: 'Internship completion certificate — STMicroelectronics, Aug 14, 2026.',
 } as const;
 
 /** Research interest chips. */
