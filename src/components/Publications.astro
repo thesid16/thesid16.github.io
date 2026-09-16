@@ -100,6 +100,11 @@ const groups: { key: string; title: string; items: Publication[] }[] = [
                           <Icon name="external" /> Paper
                         </a>
                       )}
+                      {pub.codeUrl && (
+                        <a class="pub__link" href={pub.codeUrl} target="_blank" rel="noopener">
+                          <Icon name="github" /> Code
+                        </a>
+                      )}
                       <button
                         class="cite-btn needs-js"
                         type="button"

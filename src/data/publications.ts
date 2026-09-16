@@ -25,6 +25,7 @@ export type Publication = {
   status: PubStatus;
   url?: string;
   doi?: string;
+  codeUrl?: string;
   note?: string;
   bibtex?: string;
 };
@@ -62,7 +63,7 @@ export const publications: Publication[] = [
     year: 2026,
     type: 'journal',
     status: 'under-review',
-    // url: 'https://arxiv.org/abs/TODO',
+    codeUrl: 'https://github.com/thesid16/sprs',
   },
   {
     id: 'patel2026rmai',
