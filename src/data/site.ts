@@ -118,6 +118,21 @@ export const honors: Honor[] = [
     detail: 'University-wide recipient, Class of 2027.',
   },
   {
+    title: 'Invited Peer Reviewer',
+    org: 'IEEE ICNARI 2026',
+    detail: 'IEEE International Conference on Next-Generation Adaptive Research & Innovations.',
+  },
+  {
+    title: 'National Selection',
+    org: 'Anveshana National Science Fair · 2025',
+    detail: 'Selected from 20,000+ applicants nationwide.',
+  },
+  {
+    title: 'Atal Incubation Centre Grant',
+    org: 'Life Link health platform · 2024–25',
+    detail: 'INR 100K grant with mentorship and incubation support.',
+  },
+  {
     title: "Dean's List",
     org: 'School of Engineering',
     detail: 'For academic standing — Fall 2023, Spring 2024, Fall 2025, and Spring 2026.',
