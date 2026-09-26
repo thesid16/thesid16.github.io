@@ -144,6 +144,20 @@ export const honors: Honor[] = [
   },
 ];
 
+/** Service & outreach — same shape as honors. The reviewer invitation appearing in both is intentional. */
+export const service: Honor[] = [
+  {
+    title: 'Invited Peer Reviewer',
+    org: 'IEEE ICNARI 2026',
+    detail: 'IEEE International Conference on Next-Generation Adaptive Research & Innovations (ICNARI).',
+  },
+  {
+    title: 'STEM Outreach',
+    org: 'Anveshana National Science Fair · Pragati Maidan, Delhi · 2024–25',
+    detail: 'Led workshops for 50+ school students and presented a secure-IoT prototype to 300+ attendees.',
+  },
+];
+
 /** Photo + caption shown alongside the honors list. Drop the image in /public. */
 export const recognition = {
   image: '/award.jpg',

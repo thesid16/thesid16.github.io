@@ -1,0 +1,22 @@
+---
+import { service } from '../data/site';
+---
+
+<section id="service" class="section">
+  <div class="container">
+    <p class="eyebrow" data-num="07">Service</p>
+    <h2 class="section-title reveal">Service &amp; outreach</h2>
+
+    <ul class="honor-list service-list reveal">
+      {
+        service.map((s) => (
+          <li class="honor">
+            <h3>{s.title}</h3>
+            <p class="honor__org">{s.org}</p>
+            <p class="honor__detail">{s.detail}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

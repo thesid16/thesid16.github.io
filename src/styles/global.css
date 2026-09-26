@@ -1344,6 +1344,14 @@ html.js-reveal .section .reveal.in {
   margin: 0;
 }
 
+/* ---------------------------------------------------------------- service */
+@media (min-width: 760px) {
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(1.75rem, 4vw, 3rem);
+  }
+}
+
 /* print: just the content */
 @media print {
   .nav,
