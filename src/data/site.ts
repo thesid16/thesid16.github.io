@@ -37,7 +37,6 @@ export const site = {
   heroRotators: [
     'designing an open-source GPU from first principles',
     'making large-model inference deterministic',
-    'automating memory design with LLM agents',
     'chasing latency through the memory wall',
   ],
 } as const;
