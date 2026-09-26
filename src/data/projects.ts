@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: 'RMAI — Runtime Adaptive Inference',
     description:
       'A framework that jointly tunes per-layer sparsity and quantization to live device state (thermal, power, load) on resource-constrained edge hardware — trading accuracy for efficiency only when conditions demand it.',
-    metrics: '↓ 14.8% latency · ↓ 15.4% energy · 38× better thermal robustness',
+    metrics: '14.8% lower latency · 15.4% energy savings vs static INT8 (ResNet-50, Raspberry Pi 4)',
     tags: ['Edge AI', 'Quantization', 'Dynamic Sparsity', 'Energy-Aware'],
     links: [{ label: 'Paper (under review)', href: '' }],
   },
