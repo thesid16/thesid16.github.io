@@ -428,6 +428,12 @@ p {
   font-weight: 600;
   white-space: nowrap;
 }
+/* the longest phrase can't fit on one line in a phone-width pill */
+@media (max-width: 560px) {
+  .rotator {
+    white-space: normal;
+  }
+}
 .rotator__caret {
   display: inline-block;
   width: 2px;
@@ -1156,6 +1162,7 @@ html.js-reveal .section .reveal.in {
 /* ----------------------------------------------------------- hero portrait */
 .hero__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 3.5rem);
   align-items: center;
 }
