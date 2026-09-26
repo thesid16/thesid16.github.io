@@ -140,7 +140,7 @@ export const recognition = {
     "Receiving the Dean's List award from Dr. Suneet Tuli, Dean of Engineering.",
 } as const;
 
-/** Industry experience. Add or edit entries freely — order is preserved. */
+/** Industry and teaching experience. Add or edit entries freely — order is preserved. */
 export type ExperienceEntry = {
   role: string;
   org: string;
@@ -162,6 +162,36 @@ export const experience: ExperienceEntry[] = [
       'Applied ML-guided design-space exploration and learned optimization, and fine-tuned LLMs for domain-specific accuracy on RTL tasks.',
       'Developed LLM-assisted RTL generation and architected a domain-specific AI agent from scratch to drive the flow end-to-end.',
       'Produced synthesis-ready, ECC-protected memory subsystems (encoder/decoder RTL; SEC/SECDED) across 7+ configuration axes, byte- to gigabyte-scale.',
+    ],
+  },
+  {
+    role: 'Teaching Assistant — Digital Electronics',
+    org: 'Department of Electrical Engineering, Shiv Nadar Institution of Eminence',
+    location: 'Greater Noida, India',
+    start: 'Aug 2026',
+    end: 'Present',
+    bullets: [
+      'Running digital-design labs for 60 students, and independently designing three FPGA experiments that teach Verilog through progressively harder RTL tasks rather than fill-in-the-blank exercises.',
+    ],
+  },
+  {
+    role: 'Curriculum Designer & Lab Instructor — Electronics & IoT',
+    org: 'Department of Electrical Engineering, Shiv Nadar Institution of Eminence',
+    location: 'Greater Noida, India',
+    start: 'Jul 2025',
+    end: 'May 2026',
+    bullets: [
+      'Built the first-year Electronics & IoT lab course: experiments, modules, learning objectives and assessments for 480+ students, taught 120+ directly, and led the build-out of a 20-station research lab from equipment procurement through setup.',
+    ],
+  },
+  {
+    role: 'Independent Consultant — Electronics Design',
+    org: 'Electronics manufacturer (confidential)',
+    location: 'Delhi NCR, India',
+    start: 'Feb 2025',
+    end: 'Jul 2025',
+    bullets: [
+      'Sole engineer on a full product redesign: re-architected 3- and 4-phase voltage stabilizers end to end (circuit, PCB, firmware, enclosure), cutting production cost by ~70% through modular reuse while keeping backward compatibility with legacy units.',
     ],
   },
 ];
