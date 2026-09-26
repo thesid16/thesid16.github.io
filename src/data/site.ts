@@ -86,18 +86,23 @@ export const profileLinks: ProfileLink[] = [
 
 /** About section — written in light HTML so key phrases can be emphasized. */
 export const about: string[] = [
-  `I'm a third-year Electrical &amp; Computer Engineering student at
+  `I'm a final-year B.Tech student in Electrical &amp; Computer Engineering at
    <a href="https://snu.edu.in/" target="_blank" rel="noopener">Shiv Nadar Institution of Eminence</a>,
-   working at the intersection of <strong>hardware and AI — in both directions</strong>.
-   On the <em>hardware-for-AI</em> side, my research spans AI accelerators, compute-in-memory,
-   and making large-model inference efficient, adaptive, and deterministic. On the
-   <em>AI-for-hardware</em> side, I recently completed a Technology R&amp;D internship at
-   <strong>STMicroelectronics</strong>, building AI-driven automation for memory design —
-   LLM-assisted RTL generation, fine-tuned domain models, and an agent that drove the design flow.`,
-  `Right now I'm designing an <strong>open-source GPU microarchitecture</strong> from first
-   principles as my undergraduate thesis. I'm applying to graduate programs to go deeper on
-   the architecture and systems that will run the next generation of AI.`,
-  `If any of this overlaps with your group's work, I'd love to talk — my inbox is always open.`,
+   working at the intersection of <strong>hardware and AI — in both directions</strong>.`,
+  `On the <em>hardware-for-AI</em> side: accelerator architectures, memory systems, and making
+   large-model inference efficient, adaptive and reproducible on real hardware. On the
+   <em>AI-for-hardware</em> side, I spent summer 2026 at <strong>STMicroelectronics</strong>
+   building automation for memory design — a generator that emits synthesis-ready ECC RTL, the
+   verification harness that proves it correct, and a controlled study of what LLMs can and
+   cannot contribute to RTL generation.`,
+  `My undergraduate thesis is an <strong>open-source GPU microarchitecture</strong> designed from
+   first principles — ISA, microarchitecture and synthesizable RTL, patent-unencumbered — because
+   this field shouldn't stay locked behind a handful of proprietary architectures. The golden-model
+   simulator came first, so the RTL can be checked against something known-correct rather than
+   debugged in isolation.`,
+  `I'm applying to PhD programmes for Fall 2027. I'd like to spend it on the architectures and
+   memory systems that will run the next generation of models, and on the methodology question
+   underneath my current work: how do you know a hardware result is real?`,
 ];
 
 /** Honors & recognition. Add or edit entries freely — order is preserved. */
