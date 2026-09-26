@@ -43,7 +43,10 @@ export const projects: Project[] = [
     description:
       'A compiler/fabric ABI that guarantees bit-identical reduction results across heterogeneous GPU cluster reshapes — so a run is reproducible even when the cluster topology underneath it changes.',
     tags: ['Compilers', 'Distributed GPU', 'Numerics', 'ABI Design'],
-    links: [{ label: 'Paper (under review)', href: '' }],
+    links: [
+      { label: 'Code', href: 'https://github.com/thesid16/sprs' },
+      { label: 'Paper (under review)', href: '' },
+    ],
   },
   {
     title: 'AI-Driven Memory Design Automation',
@@ -51,5 +54,6 @@ export const projects: Project[] = [
     description:
       'LLM-assisted RTL generation, fine-tuned domain models, and a from-scratch agent that automates the end-to-end memory design workflow — including ECC-protected subsystems (SEC / SECDED).',
     tags: ['LLM Agents', 'RTL Generation', 'Fine-tuning', 'ECC / SECDED'],
+    links: [{ label: 'Code', href: 'https://github.com/thesid16/learn-the-interface' }],
   },
 ];
