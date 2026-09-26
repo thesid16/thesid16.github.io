@@ -52,8 +52,8 @@ export const projects: Project[] = [
     title: 'AI-Driven Memory Design Automation',
     badge: '@ STMicroelectronics',
     description:
-      'LLM-assisted RTL generation, fine-tuned domain models, and a from-scratch agent that automates the end-to-end memory design workflow — including ECC-protected subsystems (SEC / SECDED).',
-    tags: ['LLM Agents', 'RTL Generation', 'Fine-tuning', 'ECC / SECDED'],
+      'A Python generator that replaces a manual, per-variant RTL flow with synthesis-ready SEC/SECDED ECC memory RTL, the verification harness around it, and a controlled study of what LLMs can and cannot contribute to RTL generation.',
+    tags: ['RTL Generation', 'ECC / SECDED', 'LLMs for RTL', 'Fine-tuning'],
     links: [{ label: 'Code', href: 'https://github.com/thesid16/learn-the-interface' }],
   },
 ];

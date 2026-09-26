@@ -158,10 +158,9 @@ export const experience: ExperienceEntry[] = [
     start: 'Jun 2026',
     end: 'Aug 2026',
     bullets: [
-      'Built AI-driven automation for STMicroelectronics’ end-to-end memory-design workflow, replacing a manual, multi-engineer, per-variant RTL process with an intelligent generation pipeline.',
-      'Applied ML-guided design-space exploration and learned optimization, and fine-tuned LLMs for domain-specific accuracy on RTL tasks.',
-      'Developed LLM-assisted RTL generation and architected a domain-specific AI agent from scratch to drive the flow end-to-end.',
-      'Produced synthesis-ready, ECC-protected memory subsystems (encoder/decoder RTL; SEC/SECDED) across 7+ configuration axes, byte- to gigabyte-scale.',
+      'Automated ECC memory design: replaced a manual, multi-engineer, per-variant RTL flow with a Python generator producing synthesis-ready SEC/SECDED encoder/decoder RTL across 7+ configuration axes.',
+      'Studied LLM-based RTL generation across 4 output representations and 7 training regimes; a ~10M-parameter from-scratch model reached 0.887 formal equivalence at ~1,600× less energy per correct design than a 32B fine-tune.',
+      'Built a 6-stage verification harness (exhaustive fault injection, formal equivalence, synthesis) and a spec-driven UVM testbench for an APB slave that found and fixed 4 RTL bugs.',
     ],
   },
   {
