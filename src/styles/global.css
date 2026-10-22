@@ -455,6 +455,10 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  /* nested flex items don't shrink below their content's max-content width
+     by default (min-width:auto) — this forces the long affiliation string
+     to stay on one line and overflow the viewport on narrow phones. */
+  min-width: 0;
 }
 .now-pill {
   display: inline-flex;

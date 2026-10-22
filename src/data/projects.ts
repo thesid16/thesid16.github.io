@@ -54,6 +54,9 @@ export const projects: Project[] = [
     description:
       'A Python generator that replaces a manual, per-variant RTL flow with synthesis-ready SEC/SECDED ECC memory RTL, the verification harness around it, and a controlled study of what LLMs can and cannot contribute to RTL generation.',
     tags: ['RTL Generation', 'ECC / SECDED', 'LLMs for RTL', 'Fine-tuning'],
-    links: [{ label: 'Code', href: 'https://github.com/thesid16/learn-the-interface' }],
+    links: [
+      { label: 'Paper', href: 'https://arxiv.org/abs/2610.25881' },
+      { label: 'Code', href: 'https://github.com/thesid16/learn-the-interface' },
+    ],
   },
 ];
