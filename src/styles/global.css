@@ -1216,6 +1216,10 @@ html.js-reveal .section .reveal.in {
     grid-template-columns: 1fr 1.2fr;
   }
 }
+.experience__media {
+  display: grid;
+  gap: var(--space-5);
+}
 .experience__cert {
   margin: 0;
 }
@@ -1304,6 +1308,10 @@ html.js-reveal .section .reveal.in {
   .honors {
     grid-template-columns: 1fr 1fr;
   }
+}
+.honors__media {
+  display: grid;
+  gap: var(--space-5);
 }
 .honors__figure {
   margin: 0;

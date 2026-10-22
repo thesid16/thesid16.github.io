@@ -119,7 +119,8 @@ export const publications: Publication[] = [
     venue: 'Proc. 40th IEEE International Conference on VLSI Design (VLSID)',
     year: 2027,
     type: 'conference',
-    status: 'under-review',
+    status: 'in-press',
+    url: 'https://arxiv.org/abs/2610.25881',
   },
 ];
 

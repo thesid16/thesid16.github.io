@@ -168,6 +168,16 @@ export const recognition = {
     "Receiving the Dean's List award from Dr. Suneet Tuli, Dean of Engineering.",
 } as const;
 
+/** Second photo alongside the honors list — the reviewer certificate, shown below the award photo. */
+export const reviewerCertificate = {
+  pdfPath: '/icnari-certificate.pdf',
+  image: '/icnari-certificate-1.jpg',
+  width: 1600,
+  height: 1131,
+  alt: 'Certificate of Appreciation for Siddharth Patel as an invited reviewer for IEEE ICNARI 2026',
+  caption: 'Reviewer certificate — IEEE ICNARI 2026.',
+} as const;
+
 /** Industry and teaching experience. Add or edit entries freely — order is preserved. */
 export type ExperienceEntry = {
   role: string;
@@ -231,6 +241,15 @@ export const certificate = {
   height: 1584,
   alt: "STMicroelectronics internship completion certificate for Siddharth Patel",
   caption: 'Internship completion certificate — STMicroelectronics, Aug 14, 2026.',
+} as const;
+
+/** Second photo alongside the experience list — shown below the certificate. */
+export const experiencePhoto = {
+  image: '/st-campus.jpg',
+  width: 1200,
+  height: 1598,
+  alt: 'Siddharth Patel at the STMicroelectronics Greater Noida campus, beside the "35 years ST in India" sign',
+  caption: 'On campus at STMicroelectronics, Greater Noida — August 2026.',
 } as const;
 
 /** Research interest chips. */
